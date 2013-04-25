@@ -1,0 +1,9 @@
+autoload -U compinit
+compinit -u
+
+eval `dircolors .dir_colors`
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+zstyle ':completion:*:cd:*' tag-order local-directories path-directories
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*:default' menu select=1

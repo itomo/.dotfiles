@@ -1,0 +1,26 @@
+# ------------------------------
+# Look And Feel Settings
+# ------------------------------
+### Ls Color ###
+# 色の設定
+export LSCOLORS=Exfxcxdxbxegedabagacad
+# 補完時の色の設定
+export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+# ZLS_COLORSとは？
+export ZLS_COLORS=$LS_COLORS
+# lsコマンド時、自動で色がつく(ls -Gのようなもの？)
+export CLICOLOR=true
+# 補完候補に色を付ける
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+setopt prompt_subst
+
+autoload -U colors
+colors
+
+PROMPT='${WINDOW:+"[$WINDOW]"}%{$fg[green]%}`whoami`@`hostname`%#%{$reset_color%}'
+RPROMPT='%{$fg[white]%}[%(4~,%-1~/.../%2~,%~)%{$fg[cyan]%}:%!%{$fg[white]%}]%{$reset_color%}'
+
+export LSCOLORS=gxfxxxxxcxxxxxxxxxgxgx
+export LS_COLORS='di=01;36:ln=01;35:ex=01;32'
+zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'ex=32'
