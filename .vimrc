@@ -93,10 +93,10 @@ if has('vim_starting')
   " Installation check.
   if neobundle#exists_not_installed_bundles()
     echomsg 'Not installed bundles : ' .
-            \ string(neobundle#get_not_installed_bundle_names())
-              echomsg 'Please execute ":NeoBundleInstall" command.'
-                "finish
-                endif
+        \ string(neobundle#get_not_installed_bundle_names())
+    echomsg 'Please execute ":NeoBundleInstall" command.'
+    "finish
+  endif
 
 "GitHubリポジトリにあるプラグインを利用場合
 "NeoBundle 'tpope/vim-fugitive'
