@@ -1,7 +1,8 @@
 autoload -U compinit
 compinit -u
 
-eval `dircolors .dir_colors`
+eval `dircolors $HOME/.dir_colors`
+
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 zstyle ':completion:*:cd:*' tag-order local-directories path-directories
