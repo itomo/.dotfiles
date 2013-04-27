@@ -101,16 +101,21 @@ if has('vim_starting')
 "GitHubリポジトリにあるプラグインを利用場合
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/vimfiler'
+
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'VimClojure'
+NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc.git'
-NeoBundle 'Shougo/vimshell.git'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
 
 "GitHub以外のGitリポジトリにあるプラグインを利用する場合
-"NeoBundle 'git://git.wincent.com/command-t.git'
+NeoBundle 'git://git.wincent.com/command-t.git'
 
 "Git以外のリポジトリにあるプラグインをを利用する場合
-"NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
-"NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
+NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
+NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
 
 "Cake PHP"
 syntax on
