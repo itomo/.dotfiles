@@ -81,26 +81,26 @@ set expandtab
 syntax on
 au BufRead,BufNewFile *.ctp set filetype=php
 
-" vundle
-set nocompatible
+set nocompatible               " be iMproved
 filetype off
 
-set rtp+=~/.vim/vundle/
-call vundle#rc()
 
-" github/vim-scripts
-Bundle "grep.vim"
-Bundle "The-NERD-tree"
-Bundle "QuickBuf"
-Bundle "taglist.vim"
+if has('vim_starting')
+  set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim
+    call neobundle#rc(expand('~/dotfiles/.vim/bundle/'))
+    endif
+    " originalrepos on github
+    NeoBundle 'Shougo/neobundle.vim'
+    NeoBundle 'Shougo/vimproc'
+    NeoBundle 'VimClojure'
+    NeoBundle 'Shougo/vimshell'
+    NeoBundle 'Shougo/unite.vim'
+    NeoBundle 'Shougo/neocomplcache'
+    NeoBundle 'Shougo/neosnippet'
+    NeoBundle 'jpalardy/vim-slime'
+    NeoBundle 'scrooloose/syntastic'
+    ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
-" github
-Bundle "Shougo/neocomplcache"
-Bundle "tpope/vim-surround"
-Bundle "scrooloose/nerdcommenter"
-Bundle "kien/ctrlp.vim"
-
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimfiler'
-
-filetype plugin indent on
+    filetype plugin indent on     " required!
+    filetype indent on
+    syntax on
