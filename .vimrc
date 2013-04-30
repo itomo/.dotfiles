@@ -77,46 +77,27 @@ set shiftwidth=4
 " タブを挿入するとき、代わりに空白を使う
 set expandtab
 
-"--------------------------------------------------------------------------
-" neobundle
-set nocompatible               " Be iMproved
-filetype off                   " Required!
-
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-  endif
-
-  call neobundle#rc(expand('~/.vim/bundle/'))
-
-  filetype plugin indent on     " Required!
-
-  " Installation check.
-  if neobundle#exists_not_installed_bundles()
-    echomsg 'Not installed bundles : ' .
-        \ string(neobundle#get_not_installed_bundle_names())
-    echomsg 'Please execute ":NeoBundleInstall" command.'
-    "finish
-  endif
-
-"GitHubリポジトリにあるプラグインを利用場合
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'Shougo/vimfiler'
-
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'VimClojure'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-
-"GitHub以外のGitリポジトリにあるプラグインを利用する場合
-NeoBundle 'git://git.wincent.com/command-t.git'
-
-"Git以外のリポジトリにあるプラグインをを利用する場合
-NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
-NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
-
 "Cake PHP"
 syntax on
 au BufRead,BufNewFile *.ctp set filetype=php
+
+" vundle
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/vundle/
+call vundle#rc()
+
+" github/vim-scripts
+Bundle "grep.vim"
+Bundle "The-NERD-tree"
+Bundle "QuickBuf"
+Bundle "taglist.vim"
+
+" github
+Bundle "Shougo/neocomplcache"
+Bundle "tpope/vim-surround"
+Bundle "scrooloose/nerdcommenter"
+Bundle "kien/ctrlp.vim"
+
+filetype plugin indent on

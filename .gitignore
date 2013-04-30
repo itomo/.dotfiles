@@ -16,3 +16,4 @@ Session.vim
 *.aux
 *.elc
 .zshrc.local
+.vim/bundle/*
