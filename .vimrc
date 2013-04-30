@@ -100,4 +100,7 @@ Bundle "tpope/vim-surround"
 Bundle "scrooloose/nerdcommenter"
 Bundle "kien/ctrlp.vim"
 
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimfiler'
+
 filetype plugin indent on
