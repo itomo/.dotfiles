@@ -99,7 +99,9 @@ if has('vim_starting')
     NeoBundle 'Shougo/neosnippet'
     NeoBundle 'jpalardy/vim-slime'
     NeoBundle 'scrooloose/syntastic'
+    NeoBundle 'Shougo/vimfiler'
     ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
+
 
     filetype plugin indent on     " required!
     filetype indent on
