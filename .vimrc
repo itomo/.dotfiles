@@ -44,7 +44,9 @@ set wrap
 
 " fileencodings の設定を前から順に試してはじめにマッチしたものが採用される
 set fileencodings=utf-8,euc-jp,iso-2022-jp,utf-8,cp932
-" fileencoding=utf-8で編集中、□や○があるとその行でカーソル位置がずれる問題があったのだが、解決する設定（ambiwidth=double）
+set encoding=utf-8
+set fileformats=unix,dos,mac
+
 if &encoding == 'utf-8'
 set ambiwidth=double
 " 全角スペースの表示
