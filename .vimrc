@@ -88,8 +88,8 @@ filetype off
 
 
 if has('vim_starting')
-  set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim
-    call neobundle#rc(expand('~/dotfiles/.vim/bundle/'))
+  set runtimepath+=~/.dotfiles/.vim/neobundle.vim
+    call neobundle#rc(expand('~/.dotfiles/.vim/bundle/'))
     endif
     " originalrepos on github
     NeoBundle 'Shougo/neobundle.vim'
