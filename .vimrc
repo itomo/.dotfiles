@@ -21,6 +21,9 @@ set cmdheight=1
 "カーソルの上または下に表示する最小限の行数
 set scrolloff=2
 
+"Backspace"
+set backspace=start,eol,indent
+
 " エディタウィンドウの末尾から2行目にステータスラインを常時表示させるための指定
 set laststatus=2
 " ステータスラインの色
