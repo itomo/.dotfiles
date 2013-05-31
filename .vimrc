@@ -89,7 +89,6 @@ au BufRead,BufNewFile *.ctp set filetype=php
 set nocompatible               " be iMproved
 filetype off
 
-
 if has('vim_starting')
   set runtimepath+=~/.dotfiles/.vim/neobundle.vim
     call neobundle#rc(expand('~/.dotfiles/.vim/bundle/'))
@@ -105,6 +104,7 @@ if has('vim_starting')
     NeoBundle 'jpalardy/vim-slime'
     NeoBundle 'scrooloose/syntastic'
     NeoBundle 'Shougo/vimfiler'
+    NeoBundle 'pangloss/vim-javascript'
     ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
 
