@@ -39,6 +39,22 @@ highlight Comment ctermfg=DarkCyan
 " コマンドライン補完を拡張モードにする
 set wildmenu
 
+" 折りたたみを有効
+set foldenable
+" シンタックスに従い折りたたみ
+"set foldmethod=syntax
+" カーソルが移動した時に自動で折りたたみを開く
+set foldopen=block,hor,mark,percent,quickfix,search,tag,undo
+" 折りたたみの具合
+set foldlevel=0
+" 最大折りたたみ深度$
+set foldnestmax=3
+" 左側に折りたたみガイド表示$
+set foldcolumn=2
+hi FoldColumn gui=bold term=standout ctermbg=black ctermfg=DarkBlue guibg=Grey guifg=DarkBlue
+"折り畳みの色
+hi Folded gui=bold term=standout ctermbg=black ctermfg=DarkBlue guibg=Grey30 guifg=Grey80
+
 " 入力されているテキストの最大幅
 " (行がそれより長くなると、この幅を超えないように空白の後で改行される)を無効にする
 set textwidth=0
@@ -105,7 +121,7 @@ if has('vim_starting')
     NeoBundle 'scrooloose/syntastic'
     NeoBundle 'Shougo/vimfiler'
     NeoBundle 'pangloss/vim-javascript'
-    ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
+    "NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
 
     filetype plugin indent on     " required!
