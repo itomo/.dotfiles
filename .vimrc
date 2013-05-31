@@ -41,8 +41,8 @@ set wildmenu
 
 " 折りたたみを有効
 set foldenable
-" シンタックスに従い折りたたみ
-"set foldmethod=syntax
+" マーカーで折りたたみ
+set foldmethod=marker
 " カーソルが移動した時に自動で折りたたみを開く
 set foldopen=block,hor,mark,percent,quickfix,search,tag,undo
 " 折りたたみの具合
