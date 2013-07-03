@@ -121,9 +121,48 @@ if has('vim_starting')
     NeoBundle 'scrooloose/syntastic'
     NeoBundle 'Shougo/vimfiler'
     NeoBundle 'pangloss/vim-javascript'
+    NeoBundle 'git@git.gree-dev.net:takafumi-hirata/unite-aoi.git'
+    NeoBundle 'joonty/vdebug'
     "NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
 
     filetype plugin indent on     " required!
     filetype indent on
     syntax on
+
+    "unite-aoi
+
+    nmap <Space>tp :call AoiProcessor()<CR>
+    nmap <Space>ta :call EthnaAction()<CR>
+
+    function! AoiProcessor()
+         let root = finddir("Service", ".;")
+         let service_name = substitute(matchstr(matchstr(fnamemodify(root."/../", ":p"), "[^/]*/$"), "[^/]*"), "^.", "\\U\\0", "")
+         let action_path = expand("%:f")
+         let from_position = match(action_path,"action")
+         if from_position == -1
+           return
+         endif
+         let from_position = from_position + strlen("action")
+         let length = strlen(action_path) - from_position
+         let action_path = strpart(action_path, from_position, length)
+         let path = "Service/". service_name . "/Processor" . action_path
+         echo path
+         edit `=path`
+    endfunction
+
+    function! EthnaAction()
+         let root = finddir("Service", ".;")
+         let service_name = matchstr(matchstr(fnamemodify(root."/../", ":p"), "[^/]*/$"), "[^/]*")
+         let processor_path = expand("%:f")
+         let from_position = match(processor_path,"Processor")
+         if from_position == -1
+           return
+         endif
+         let from_position = from_position + strlen("Processor")
+         let length = strlen(processor_path) - from_position
+         let processor_path = strpart(processor_path, from_position, length)
+         let path = "frontend/". service_name . "/action" . processor_path
+         echo path
+         edit `=path`
+    endfunction
