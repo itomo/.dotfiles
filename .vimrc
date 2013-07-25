@@ -108,7 +108,7 @@ if has("syntax")
 	syn sync fromstart
 
 	function! ActivateInvisibleIndicator()
-		# 下の行の"　"は全角スペース
+		" 下の行の"　"は全角スペース
 		syntax match InvisibleJISX0208Space "　" display containedin=ALL
 		highlight InvisibleJISX0208Space term=underline ctermbg=Blue guibg=darkgray gui=underline
 		"syntax match InvisibleTrailedSpace "[\t]\+$" display containedin=ALL
