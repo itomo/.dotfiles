@@ -138,7 +138,7 @@
   # sp = stash pop
   # ss = stash save
 
-  chpk = cherry-pick # チンピク
+  chpk = cherry-pick 
   iss = issue # my extended command
 
   # git-風呂関連
