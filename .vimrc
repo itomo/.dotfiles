@@ -60,6 +60,9 @@ hi FoldColumn gui=bold term=standout ctermbg=black ctermfg=DarkBlue guibg=Grey g
 "折り畳みの色
 hi Folded gui=bold term=standout ctermbg=black ctermfg=DarkBlue guibg=Grey30 guifg=Grey80
 
+"折りたたみ文字変更 {{{,}}}で都合の悪いもの
+au BufRead,BufNewFile *.tpl set foldmarker=<<<,>>>
+
 " 入力されているテキストの最大幅
 " (行がそれより長くなると、この幅を超えないように空白の後で改行される)を無効にする
 set textwidth=0
@@ -182,6 +185,7 @@ if has('vim_starting')
     set runtimepath+=~/.dotfiles/.vim/neobundle.vim
     call neobundle#rc(expand('~/.dotfiles/.vim/bundle/'))
 endif
+
 " originalrepos on github
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
