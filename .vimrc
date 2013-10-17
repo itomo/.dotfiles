@@ -7,6 +7,11 @@ set title
 "バイナリファイルの非印字可能文字を16進数で表示
 set display=uhex
 
+" Backupファイルを作らない。
+set nowritebackup
+set nobackup
+set noswapfile
+
 " 行番号を表示する
 set number
 " ルーラーを表示
@@ -55,6 +60,9 @@ hi FoldColumn gui=bold term=standout ctermbg=black ctermfg=DarkBlue guibg=Grey g
 "折り畳みの色
 hi Folded gui=bold term=standout ctermbg=black ctermfg=DarkBlue guibg=Grey30 guifg=Grey80
 
+"折りたたみ文字変更 {{{,}}}で都合の悪いもの
+au BufRead,BufNewFile *.tpl set foldmarker=<<<,>>>
+
 " 入力されているテキストの最大幅
 " (行がそれより長くなると、この幅を超えないように空白の後で改行される)を無効にする
 set textwidth=0
@@ -67,19 +75,19 @@ set encoding=utf-8
 set fileformats=unix,dos,mac
 
 if &encoding == 'utf-8'
-	set ambiwidth=double
-	" 全角スペースの表示
-	highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
-	match ZenkakuSpace /　/
+    set ambiwidth=double
+    " 全角スペースの表示
+    highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+    match ZenkakuSpace /　/
 endif
 
 " カーソル行をハイライト
 set cursorline
 " カレントウィンドウにのみ罫線を引く
 augroup cch
-	autocmd! cch
-	autocmd WinLeave * set nocursorline
-	autocmd WinEnter,BufRead * set cursorline
+    autocmd! cch
+    autocmd WinLeave * set nocursorline
+    autocmd WinEnter,BufRead * set cursorline
 augroup END
 
 :hi clear CursorLine
@@ -99,52 +107,53 @@ set shiftwidth=4
 set expandtab
 " タブなどの可視化
 set list
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-" 全角スペース・行末のスペース・タブの可視化
+set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
+",eol:↲" 全角スペース・行末のスペース・タブの可視化,改行は邪魔だったのでコメントアウト
+
 if has("syntax")
-	syntax on
+    syntax on
 
-	" PODバグ対策
-	syn sync fromstart
+    " PODバグ対策
+    syn sync fromstart
 
-	function! ActivateInvisibleIndicator()
-		" 下の行の"　"は全角スペース
-		syntax match InvisibleJISX0208Space "　" display containedin=ALL
-		highlight InvisibleJISX0208Space term=underline ctermbg=Blue guibg=darkgray gui=underline
-		"syntax match InvisibleTrailedSpace "[\t]\+$" display containedin=ALL
-		"highlight ctermbg=Red guibg=NONE gui=undercurl guisp=darkorange
-		"syntax match InvisibleTab "\t" display containedin=ALL
-		"highlight InvisibleTab	term=underline ctermbg=white gui=undercurl guisp=darkslategray
-	endfunction
+    function! ActivateInvisibleIndicator()
+        " 下の行の"　"は全角スペース
+        syntax match InvisibleJISX0208Space "　" display containedin=ALL
+        highlight InvisibleJISX0208Space term=underline ctermbg=Blue guibg=darkgray gui=underline
+        "syntax match InvisibleTrailedSpace "[\t]\+$" display containedin=ALL
+        "highlight ctermbg=Red guibg=NONE gui=undercurl guisp=darkorange
+        "syntax match InvisibleTab "\t" display containedin=ALL
+        "highlight InvisibleTab	term=underline ctermbg=white gui=undercurl guisp=darkslategray
+    endfunction
 
-	augroup	invisible
-		autocmd! invisible
-		autocmd	BufNew,BufRead * call ActivateInvisibleIndicator()
-	augroup END
+    augroup	invisible
+        autocmd! invisible
+        autocmd	BufNew,BufRead * call ActivateInvisibleIndicator()
+    augroup END
 endif
 
 " tab
 " Anywhere SID.
 function! s:SID_PREFIX()
-	return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
+    return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
 endfunction
 function! s:my_tabline()  "{{{
-	let s = ''
-	for i in range(1, tabpagenr('$'))
-		let bufnrs = tabpagebuflist(i)
-		let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
-		let no = i  " display 0-origin tabpagenr.
-		let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
-		let title = fnamemodify(bufname(bufnr), ':t')
-		let title = '[' . title . ']'
-		let s .= '%'.i.'T'
-		let s .= '%#' . (i == tabpagenr() ? 'TabLineSel' : 'TabLine') . '#'
-		let s .= no . ':' . title
-		let s .= mod
-		let s .= '%#TabLineFill# '
-	endfor
-	let s .= '%#TabLineFill#%T%=%#TabLine#'
-	return s
+    let s = ''
+    for i in range(1, tabpagenr('$'))
+        let bufnrs = tabpagebuflist(i)
+        let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
+        let no = i  " display 0-origin tabpagenr.
+        let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
+        let title = fnamemodify(bufname(bufnr), ':t')
+        let title = '[' . title . ']'
+        let s .= '%'.i.'T'
+        let s .= '%#' . (i == tabpagenr() ? 'TabLineSel' : 'TabLine') . '#'
+        let s .= no . ':' . title
+        let s .= mod
+        let s .= '%#TabLineFill# '
+    endfor
+    let s .= '%#TabLineFill#%T%=%#TabLine#'
+    return s
 endfunction "}}}
 let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
 set showtabline=2 " 常にタブラインを表示
@@ -153,8 +162,8 @@ nnoremap    [Tag]   <Nop>
 nmap    t [Tag]
 " Tab jump
 for n in range(1, 9)
-	" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
-	execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+    " t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
+    execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
 endfor
 " tc 新しいタブを一番右に作る
 map <silent> [Tag]c :tablast <bar> tabnew<CR>
@@ -173,9 +182,10 @@ set nocompatible               " be iMproved
 filetype off
 
 if has('vim_starting')
-	set runtimepath+=~/.dotfiles/.vim/neobundle.vim
-	call neobundle#rc(expand('~/.dotfiles/.vim/bundle/'))
+    set runtimepath+=~/.dotfiles/.vim/neobundle.vim
+    call neobundle#rc(expand('~/.dotfiles/.vim/bundle/'))
 endif
+
 " originalrepos on github
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
