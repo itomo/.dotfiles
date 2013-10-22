@@ -19,7 +19,6 @@ set ruler
 set shortmess+=I
 
 "検索設定
-set incsearch
 set ignorecase
 
 " 入力中のコマンドをステータスに表示する
