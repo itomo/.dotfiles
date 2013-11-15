@@ -1,6 +1,6 @@
 alias rm="rm -i"
 alias ls="ls --color=auto"
 alias gitgraph="git log --graph --all --color  --pretty='%x09%h %cn%x09%s %Cred%d%Creset'"
-alias pl="sudo tail -f /var/log/php.log"
-alias el="sudo tail -f /var/log/apache/error.log"
+alias pl="tail -f /var/log/php.log"
+alias el="tail -f /var/log/apache/error.log"
 alias tmux="tmux -u"
