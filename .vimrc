@@ -18,6 +18,9 @@ set number
 set ruler
 set shortmess+=I
 
+"検索設定
+set ignorecase
+
 " 入力中のコマンドをステータスに表示する
 set showcmd
 "コマンドラインに使われるスクリーン上の行数
