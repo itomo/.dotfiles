@@ -1,6 +1,6 @@
 [user]
-    name = Tomohiro Inoue
-    email = lalburiki@gmail.com
+#    name = for commit log
+#    email = for commit log
 [color]
     # colorの設定(以下のコマンドは自動で色つける)
     ui = auto
