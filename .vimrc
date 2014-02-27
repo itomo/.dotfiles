@@ -62,7 +62,6 @@ set foldcolumn=2
 hi FoldColumn gui=bold term=standout ctermbg=black ctermfg=DarkBlue guibg=Grey guifg=DarkBlue
 "折り畳みの色
 hi Folded gui=bold term=standout ctermbg=black ctermfg=DarkBlue guibg=Grey30 guifg=Grey80
-
 "折りたたみ文字変更 {{{,}}}で都合の悪いもの
 au BufRead,BufNewFile *.tpl set foldmarker=<<<,>>>
 
@@ -209,3 +208,7 @@ filetype plugin indent on     " required!
 filetype indent on
 syntax on
 
+"   いろいろ色
+"   何色が出るか確認    :so $VIMRUNTIME/syntax/colortest.vim
+"   現在ルールの確認    :so $VIMRUNTIME/syntax/hitest.vim
+hi Todo term=bold ctermfg=brown ctermbg=darkgray
