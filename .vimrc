@@ -208,6 +208,18 @@ filetype plugin indent on     " required!
 filetype indent on
 syntax on
 
+"   辞書ファイル
+autocmd BufRead *.php\|*.ctp :set dictionary=~/.vim/dictionaries/php.dict filetype=php
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_smart_case = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_manual_completion_start_length = 0
+let g:neocomplcache_caching_percent_in_statusline = 1
+let g:neocomplcache_enable_skip_completion = 1
+let g:neocomplcache_skip_input_time = '0.5'
+
 "   いろいろ色
 "   何色が出るか確認    :so $VIMRUNTIME/syntax/colortest.vim
 "   現在ルールの確認    :so $VIMRUNTIME/syntax/hitest.vim
