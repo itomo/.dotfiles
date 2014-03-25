@@ -224,3 +224,7 @@ let g:neocomplcache_skip_input_time = '0.5'
 "   何色が出るか確認    :so $VIMRUNTIME/syntax/colortest.vim
 "   現在ルールの確認    :so $VIMRUNTIME/syntax/hitest.vim
 hi Todo term=bold ctermfg=brown ctermbg=darkgray
+hi DiffChange term=bold ctermfg=lightred ctermbg=darkgray
+hi SpellRare term=bold ctermfg=red ctermbg=darkgray
+hi Pmenu ctermfg=white ctermbg=black
+hi PmenuSel ctermfg=darkred ctermbg=black
