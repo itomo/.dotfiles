@@ -200,8 +200,8 @@ NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'git@git.gree-dev.net:takafumi-hirata/unite-aoi.git'
 NeoBundle 'joonty/vdebug'
+NeoBundle 'tpope/vim-surround'
 "NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
 filetype plugin indent on     " required!
