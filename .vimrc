@@ -210,10 +210,10 @@ syntax on
 
 "   辞書ファイル
 autocmd BufRead *.php\|*.ctp :set dictionary=~/.vim/dictionaries/php.dict filetype=php
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_smart_case = 1
+let g:neocomplcache_enable_at_startup = 0
+let g:neocomplcache_enable_camel_case_completion = 0
+let g:neocomplcache_enable_underbar_completion = 0
+let g:neocomplcache_smart_case = 0
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_manual_completion_start_length = 0
 let g:neocomplcache_caching_percent_in_statusline = 1
