@@ -1,4 +1,4 @@
-fpath=(~/.dotfiles/sources/zsh-completions/src $fpath)
+fpath=(~/.dotfiles/zsh-completions/src $fpath)
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 umask 002
