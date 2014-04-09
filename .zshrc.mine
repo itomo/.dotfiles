@@ -1,6 +1,8 @@
 fpath=(~/.dotfiles/zsh-completions/src $fpath)
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-
+export ETHNA_HOME=/home/gree/common/pub/lib/Ethna/
+export LANG=ja_JP.UTF-8
+setopt nonomatch
 umask 002
 cdpath=(~)
 setopt AUTOPUSHD
