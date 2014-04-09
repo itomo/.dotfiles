@@ -4,3 +4,4 @@ alias gitgraph="git log --graph --all --color  --pretty='%x09%h %cn%x09%s %Cred%
 alias pl="tail -f /var/log/php.log"
 alias el=" sudo tail -f /var/log/apache/error.log"
 alias tmux="tmux -u"
+alias figr='sh $HOME/.dotfiles/sh/find_grep.sh'
