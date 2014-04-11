@@ -1,5 +1,4 @@
 fpath=(${HOME}/.dotfiles/.zsh/completions/ $fpath)
-fpath=(${HOME}/.dotfiles/.zsh/zsh-completions/src $fpath)
 case ${OSTYPE} in
     darwin*)
         export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
