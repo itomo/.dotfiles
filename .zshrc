@@ -47,4 +47,4 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 #
 source $HOME/.dotfiles/.zshrc.mine  #自分の.zshrcを有効にする
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local # ローカルの設定を読み込む
+[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local # ローカルの設定を読み込む
