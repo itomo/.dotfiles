@@ -1,11 +1,16 @@
 alias rm="rm -i"
-if [ `uname` = "Darwin" ]; then
-#mac用のコード
-    alias ls="ls -G"
-elif [ `uname` = "Linux" ]; then
-#Linux用のコード
-    alias ls="ls --color=auto"
-fi
+case "${OSTYPE}" in
+    #mac用のコード
+    darwin*)
+        alias ls='ls -G -w'
+    ;;
+    #Linux用のコード
+    linux*)
+        alias ls='ls -hF --color=tty' # classify files in colour
+        alias dir='ls --color=auto --format=vertical'
+        alias vdir='ls --color=auto --format=long'
+    ;;
+esac
 alias gitgraph="git log --graph --all --color  --pretty='%x09%h %cn%x09%s %Cred%d%Creset'"
 alias pl="tail -f /var/log/php.log"
 alias el=" sudo tail -f /var/log/apache/error.log"
