@@ -2,7 +2,7 @@ alias rm="rm -i"
 case "${OSTYPE}" in
     #mac用のコード
     darwin*)
-        alias ls='ls -G -w'
+        alias ls='ls --color=auto'
     ;;
     #Linux用のコード
     linux*)
