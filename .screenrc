@@ -7,6 +7,3 @@ backtick 0 0 0 echo ${ttyname}
 escape ^Tt
 termcapinfo xterm* ti@:te@
 term xterm-256color
-
-
-
