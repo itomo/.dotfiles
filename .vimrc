@@ -200,7 +200,6 @@ NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'joonty/vdebug'
 NeoBundle 'tpope/vim-surround'
 "NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
