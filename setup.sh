@@ -4,5 +4,9 @@ DOT_FILES=( .zshenv .zshrc .zshrc.alias .zshrc.bindkey .zshrc.complete .zshrc.hi
 
 for file in ${DOT_FILES[@]}
 do
-    ln -s $HOME/.dotfiles/$file $HOME/$file
+    if [ -e $HOME/$file ]; then
+        echo "$file is already exists"
+    else
+        ln -s $HOME/.dotfiles/$file $HOME/$file
+    fi
 done
