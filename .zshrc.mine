@@ -17,4 +17,4 @@ source ~/.zshrc.alias
 source ~/.zshrc.bindkey
 source ~/.zshrc.complete
 source ~/.zshrc.history
-source ~/.zshrc.prompt
+#source ~/.zshrc.prompt
