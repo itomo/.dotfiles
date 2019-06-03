@@ -1,5 +1,5 @@
-autoload -U compinit
-compinit -u
+autoload -Uz compinit
+compinit -Cu
 
 eval `dircolors $HOME/.dir_colors`
 
