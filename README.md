@@ -6,6 +6,8 @@ git clone https://github.com/itomo/.dotfiles.git
 cd ~/.dotifiles  
 git submodule update --init  
 sh ./setup.sh  
+cd .zprezto  
+git submodule update --init  
 
 # 2. Vim の設定
 cd ~/  
