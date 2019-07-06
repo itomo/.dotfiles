@@ -1,5 +1,9 @@
 dotfiles
 ========
+# 0. mac事前準備(home brew install とcoreutil のinstall)
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  
+brew install coreutils  
+
 # 1. 使い方
 cd ~/  
 git clone https://github.com/itomo/.dotfiles.git  
