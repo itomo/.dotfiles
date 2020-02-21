@@ -18,3 +18,7 @@ source ~/.zshrc.bindkey
 source ~/.zshrc.complete
 source ~/.zshrc.history
 #source ~/.zshrc.prompt
+# set prezto theme
+autoload -Uz promptinit
+promptinit
+prompt pure

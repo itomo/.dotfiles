@@ -1,4 +1,4 @@
-## speed measurement
+# speed measurement -> end .zshrc
 #zmodload zsh/zprof && zprof
 
 source $HOME/.dotfiles/.zprezto/runcoms/zshenv #prezto を有効化
