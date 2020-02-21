@@ -6,3 +6,8 @@ source $HOME/.dotfiles/.zshrc.mine  # .zshrc
 if (which zprof > /dev/null 2>&1) ;then
   zprof
 fi
+
+# set prezto theme
+autoload -Uz promptinit
+promptinit
+prompt pure
