@@ -33,3 +33,7 @@ git config --list | grep user
 
 ・ローカル設定ファイル  
 /etc/.gitconfig  
+
+# 4. prezto のテーマ設定
+vim ~/.dotfiles/.zshrc.mine--
+prompt pure # <- pure の部分を変更--
