@@ -1,7 +1,7 @@
 autoload -Uz compinit
 compinit -Cu
 
-eval `dircolors $HOME/.dir_colors`
+# eval `dircolors $HOME/.dir_colors`
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
