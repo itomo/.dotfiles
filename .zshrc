@@ -11,3 +11,7 @@ fi
 autoload -Uz promptinit
 promptinit
 prompt pure
+eval "$(rbenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

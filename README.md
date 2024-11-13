@@ -1,8 +1,11 @@
 dotfiles
 ========
-# 0. mac事前準備(home brew install とcoreutil のinstall)
+# 0. mac事前準備(home brew /coreutil /fish のinstall)
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  
 brew install coreutils  
+brew install fish--
+which fish--
+/etc/shells/に上記で出たパスを追記--
 
 # 1. 使い方
 cd ~/  
@@ -10,6 +13,7 @@ git clone https://github.com/itomo/.dotfiles.git
 cd ~/.dotifiles  
 git submodule update --init  
 sh ./setup.sh  
+過去対応（zsh）--
 cd .zprezto  
 git submodule update --init  
 
@@ -34,6 +38,6 @@ git config --list | grep user
 ・ローカル設定ファイル  
 /etc/.gitconfig  
 
-# 4. prezto のテーマ設定
+# (old)4. prezto のテーマ設定
 vim ~/.dotfiles/.zshrc.mine--
 prompt pure # <- pure の部分を変更--
