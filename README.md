@@ -3,9 +3,9 @@ dotfiles
 # 0. mac事前準備(home brew /coreutil /fish のinstall)
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  
 brew install coreutils  
-brew install fish--
-which fish--
-/etc/shells/に上記で出たパスを追記--
+brew install fish  
+which fish  
+/etc/shells/に上記で出たパスを追記  
 
 # 1. 使い方
 cd ~/  
