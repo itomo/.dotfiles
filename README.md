@@ -13,9 +13,11 @@ git clone https://github.com/itomo/.dotfiles.git
 cd ~/.dotifiles  
 git submodule update --init  
 sh ./setup.sh  
+<!--
 過去対応（zsh)  
 cd .zprezto  
 git submodule update --init  
+-->
 
 # 2. Vim の設定
 cd ~/  
@@ -41,6 +43,8 @@ git config --list | grep user
 # 4. fishの設定
 fish_config
 
+<!--
 # (old)4. prezto のテーマ設定  
 vim ~/.dotfiles/.zshrc.mine  
 prompt pure # <- pure の部分を変更  
+-->
